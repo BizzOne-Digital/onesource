@@ -1,0 +1,238 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  min-height: var(--header-offset);
+  padding-top: env(safe-area-inset-top, 0px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    backdrop-filter 0.35s ease;
+  border-bottom: 1px solid transparent;
+  background: rgba(0, 0, 0, 0.92);
+}
+
+.transparent {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.15) 70%, transparent 100%);
+  border-bottom-color: transparent;
+}
+
+.scrolled {
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(14px);
+  border-bottom-color: var(--color-border);
+}
+
+.scrolled.transparent {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  height: var(--header-height);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  z-index: 1001;
+}
+
+.logo {
+  width: clamp(3.75rem, 14vw, 6.75rem);
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  .inner {
+    gap: 0.5rem;
+  }
+
+  .logo {
+    width: clamp(3.35rem, 18vw, 4.25rem);
+  }
+}
+
+.desktopNav {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+}
+
+.navLink {
+  position: relative;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  color: rgba(255, 255, 255, 0.88);
+  transition: color 0.2s;
+}
+
+.navLink:hover {
+  color: var(--color-white);
+}
+
+.navActive {
+  color: var(--color-white);
+}
+
+.navActive::after {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0.15rem;
+  height: 2px;
+  background: var(--color-blue);
+  border-radius: 2px;
+}
+
+.desktopActions {
+  display: none;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.headerCta {
+  padding-inline: 1.15rem !important;
+  box-shadow: 0 6px 24px rgba(0, 123, 255, 0.4);
+}
+
+.menuBtn {
+  justify-self: end;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.menuIcon {
+  position: relative;
+  display: block;
+  width: 1.25rem;
+  height: 2px;
+  background: var(--color-white);
+  border-radius: 2px;
+  transition: transform 0.25s, opacity 0.25s;
+}
+
+.menuIcon::before,
+.menuIcon::after {
+  display: block;
+  width: 1.25rem;
+  height: 2px;
+  background: var(--color-white);
+  border-radius: 2px;
+  transition: transform 0.25s, opacity 0.25s;
+  position: absolute;
+  left: 0;
+  content: '';
+}
+
+.menuIcon::before {
+  top: -6px;
+}
+
+.menuIcon::after {
+  top: 6px;
+}
+
+.menuOpen {
+  background: transparent;
+}
+
+.menuOpen::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menuOpen::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.mobilePanel {
+  position: fixed;
+  inset: var(--header-offset) 0 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.96);
+  backdrop-filter: blur(16px);
+  padding: 1.5rem max(1rem, env(safe-area-inset-right)) calc(1.5rem + env(safe-area-inset-bottom))
+    max(1rem, env(safe-area-inset-left));
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobileLink {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  padding: 0.85rem 0.5rem;
+  min-height: 2.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mobileActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.fullWidth {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .desktopNav {
+    display: flex;
+  }
+
+  .desktopActions {
+    display: flex;
+  }
+
+  .menuBtn {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .desktopActions {
+    display: none;
+  }
+}

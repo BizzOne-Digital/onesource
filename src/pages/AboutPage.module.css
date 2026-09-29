@@ -1,0 +1,331 @@
+.intro {
+  border-bottom: 1px solid var(--color-border);
+  max-width: 100%;
+  overflow-x: clip;
+}
+.introGrid {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3rem);
+  align-items: stretch;
+}
+
+@media (min-width: 900px) {
+  .introGrid {
+    grid-template-columns: 1.25fr 1fr;
+  }
+}
+
+.introCol {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.body {
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+  line-height: 1.65;
+  max-width: 40rem;
+}
+
+.experienceCard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(1.75rem, 4vw, 2.25rem);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 123, 255, 0.35);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(0, 123, 255, 0.12), transparent 55%),
+    rgba(0, 123, 255, 0.06);
+  min-height: 100%;
+}
+
+.experienceNum {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 800;
+  color: var(--color-blue);
+  line-height: 1;
+}
+
+.experienceLabel {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-white);
+  margin: 0.35rem 0 1rem;
+}
+
+.experienceText {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.55;
+}
+
+.story {
+  background: var(--color-surface);
+}
+
+.storyGrid {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .storyGrid {
+    grid-template-columns: 1.35fr 1fr;
+  }
+}
+
+.storyCol {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.storyCol .body + .body {
+  margin-top: 1rem;
+}
+
+.quote {
+  margin: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(1.75rem, 4vw, 2.25rem);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-black);
+  position: relative;
+  min-height: 100%;
+}
+
+.quoteMark {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--color-blue);
+  opacity: 0.65;
+  margin-bottom: 0.25rem;
+}
+
+.quote p {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+  font-weight: 600;
+  margin: 0 0 1rem;
+  line-height: 1.35;
+}
+
+.quote footer {
+  color: var(--color-silver);
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+.values {
+  border-block: 1px solid var(--color-border);
+}
+
+.valueGrid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .valueGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.valueGridItem {
+  display: flex;
+  min-width: 0;
+  height: 100%;
+}
+
+.valueCard {
+  flex: 1;
+  width: 100%;
+  min-height: 10rem;
+  padding: 1.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-elevated);
+  transition:
+    border-color 0.3s,
+    transform 0.3s,
+    box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.valueCard:hover {
+  border-color: rgba(0, 123, 255, 0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.valueCard h3 {
+  font-family: var(--font-display);
+  margin: 0 0 0.65rem;
+  color: var(--color-blue);
+  font-size: 1.05rem;
+}
+
+.valueCard p {
+  margin: 0;
+  flex: 1;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+
+.audienceGrid {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3rem);
+  align-items: stretch;
+}
+
+@media (min-width: 900px) {
+  .audienceGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.audienceCol {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.audienceList {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.audienceList li {
+  padding: 0.85rem 1rem;
+  border-left: 3px solid var(--color-blue);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.audienceVisual {
+  flex: 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  min-height: 16rem;
+}
+
+.audienceVisual img {
+  width: 100%;
+  height: 100%;
+  min-height: 16rem;
+  object-fit: cover;
+}
+
+.cta {
+  padding-bottom: clamp(4rem, 8vw, 6rem);
+}
+
+.ctaBox {
+  position: relative;
+  text-align: center;
+  max-width: 40rem;
+  margin-inline: auto;
+  padding: clamp(2.5rem, 5vw, 3.25rem) clamp(1.5rem, 4vw, 2rem);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0, 123, 255, 0.28);
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 0%, rgba(0, 123, 255, 0.12), transparent 58%),
+    var(--color-surface-elevated);
+}
+
+.ctaAccent {
+  display: block;
+  width: 3.5rem;
+  height: 3px;
+  background: var(--color-blue);
+  border-radius: 2px;
+  margin: 0 auto 1.25rem;
+  box-shadow: 0 0 16px rgba(0, 123, 255, 0.45);
+}
+
+.ctaBox h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 3.5vw, 2.1rem);
+  margin: 0 0 0.85rem;
+}
+
+.ctaBox p {
+  margin: 0 auto 1.75rem;
+  max-width: 32rem;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.55;
+}
+
+.ctaPhone {
+  color: var(--color-blue);
+  font-weight: 600;
+}
+
+.ctaPhone:hover {
+  opacity: 0.85;
+}
+
+.ctaButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.ctaBtn {
+  border-radius: 0.5rem !important;
+}
+
+.ctaCallBtn {
+  border-color: rgba(255, 255, 255, 0.9) !important;
+  color: var(--color-white) !important;
+  background: transparent !important;
+}
+
+.ctaCallBtn:hover {
+  border-color: var(--color-white) !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 479px) {
+  .ctaButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ctaButtons .ctaBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .valueCard:hover {
+    transform: none;
+  }
+}

@@ -1,0 +1,14 @@
+.accent {
+  width: min(100%, 28rem);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 0 12px rgba(0, 123, 255, 0.35));
+  pointer-events: none;
+}
+
+.circleArrow {
+  width: 8rem;
+  height: 8rem;
+  opacity: 0.35;
+  pointer-events: none;
+}

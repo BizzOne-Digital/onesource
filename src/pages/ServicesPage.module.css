@@ -1,0 +1,270 @@
+.pageHeader {
+  padding-block: clamp(3rem, 8vw, 5rem);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(0, 123, 255, 0.12), transparent 55%),
+    var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  text-align: center;
+  max-width: 100%;
+  overflow-x: clip;
+}
+.pageHeaderInner {
+  max-width: 44rem;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3.1rem);
+  max-width: 20ch;
+  margin: 0 0 1rem;
+  line-height: 1.1;
+}
+
+.intro {
+  max-width: 40rem;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0 0 1.5rem;
+  font-size: 1.1rem;
+}
+
+.paintingSection {
+  padding-block: clamp(3rem, 7vw, 5rem);
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.additional {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.banner {
+  padding-block: clamp(3rem, 6vw, 4.5rem);
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.sectionHeading {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin: 0 0 2.5rem;
+  color: var(--color-blue);
+}
+
+.serviceRow {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+
+.serviceRow:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 900px) {
+  .serviceRow {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 3rem;
+  }
+
+  .reversed .serviceMedia {
+    order: 2;
+  }
+
+  .reversed .serviceContent {
+    order: 1;
+  }
+}
+
+.serviceMedia {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.serviceMedia img {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  object-fit: cover;
+}
+
+.serviceContent {
+  padding: 0.5rem 0;
+}
+
+.serviceIndex {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: var(--color-silver-muted);
+}
+
+.serviceContent h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin: 0.35rem 0 0.75rem;
+}
+
+.serviceContent p {
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0 0 1.25rem;
+}
+
+.serviceCta {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-blue);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: gap 0.25s;
+}
+
+.serviceCta:hover {
+  gap: 0.6rem;
+}
+
+.cardGrid {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+  align-items: stretch;
+  grid-template-columns: 1fr;
+}
+
+.cardGridItem {
+  display: flex;
+  min-width: 0;
+  height: 100%;
+}
+
+@media (min-width: 640px) {
+  .cardGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .cardGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.serviceCard {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  min-height: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-elevated);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s,
+    border-color 0.35s;
+}
+
+.serviceCard:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 123, 255, 0.45);
+  box-shadow: var(--shadow-glow);
+}
+
+.cardImage {
+  flex-shrink: 0;
+  overflow: hidden;
+  background: var(--color-black);
+}
+
+.cardImage img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+
+.cardBody {
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.cardBody h3 {
+  font-family: var(--font-display);
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+.cardSummary {
+  margin: 0 0 0.5rem;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.cardDetail {
+  margin: 0;
+  flex: 1;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cardBody .serviceCta {
+  margin-top: auto;
+  padding-top: 1.15rem;
+  flex-shrink: 0;
+}
+
+.bannerInner {
+  text-align: center;
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  border-radius: var(--radius-lg);
+  border: 1px dashed rgba(192, 192, 192, 0.35);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+@media (max-width: 767px) {
+  .pageHeader {
+    padding-block: clamp(2.25rem, 10vw, 3rem);
+  }
+
+  .intro {
+    font-size: 1rem;
+  }
+}
+
+.bannerInner h2 {
+  font-family: var(--font-display);
+  margin: 0 0 0.75rem;
+}
+
+.bannerInner p {
+  margin: 0 auto 1.5rem;
+  max-width: 34rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .serviceCard:hover {
+    transform: none;
+  }
+}
