@@ -69,7 +69,7 @@ export const services: ServiceItem[] = [
     description:
       'Epoxy flooring adds a polished, easy-to-maintain surface ideal for garages and utility spaces. We prepare surfaces properly for adhesion and a smooth, professional result.',
     image: '/services/epoxy-flooring.jpg',
-    imageAlt: 'Garage with glossy metallic epoxy floor and modern cabinetry',
+    imageAlt: 'Glossy flake epoxy garage floor with gray, white, and blue speckled finish',
   },
   {
     slug: 'pressure-washing',

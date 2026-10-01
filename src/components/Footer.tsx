@@ -22,11 +22,11 @@ export function Footer() {
         <div className={styles.brand}>
           <div className={styles.logoPanel}>
             <img
-              src="/logo.jpg"
+              src="/logo.png"
               alt={`${siteConfig.businessName} logo`}
               className={styles.logo}
-              width={140}
-              height={140}
+              width={360}
+              height={108}
             />
           </div>
           <p className={styles.slogan}>{siteConfig.slogan}</p>

@@ -41,11 +41,11 @@ export function Header() {
       <div className={`container-wide ${styles.inner}`}>
         <Link to="/" className={styles.logoLink} onClick={() => setOpen(false)}>
           <img
-            src="/logo.jpg"
+            src="/logo.png"
             alt={`${siteConfig.businessName} — ${siteConfig.slogan}`}
             className={styles.logo}
-            width={220}
-            height={220}
+            width={320}
+            height={96}
           />
         </Link>
 

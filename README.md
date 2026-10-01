@@ -58,7 +58,7 @@ Deploy the `dist` folder to Vercel (or any static host). Vercel uses the include
 - `src/config/site.ts` — business copy, services, testimonials data, form helper
 - `src/components/` — layout, header, footer, form, motion primitives
 - `src/pages/` — route-level page layouts
-- `public/logo.jpg` — official company logo
+- `public/logo.png` — official company logo
 
 ## License
 
