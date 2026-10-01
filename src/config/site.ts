@@ -147,7 +147,7 @@ export const galleryImages = [
   },
   {
     src: '/gallery/epoxy-flooring.jpg',
-    alt: 'Garage with glossy metallic epoxy floor coating',
+    alt: 'Glossy flake epoxy garage floor with gray, white, and blue speckled finish',
     caption: 'Epoxy flooring',
   },
   {
